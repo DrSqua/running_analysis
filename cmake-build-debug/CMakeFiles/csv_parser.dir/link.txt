@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\csv_parser.dir/objects.a
+C:\mingw\mingw64\bin\ar.exe cr CMakeFiles\csv_parser.dir/objects.a @CMakeFiles\csv_parser.dir\objects1.rsp
+C:\mingw\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\csv_parser.dir/objects.a -Wl,--no-whole-archive -o csv_parser.exe -Wl,--out-implib,libcsv_parser.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\csv_parser.dir\linklibs.rsp
