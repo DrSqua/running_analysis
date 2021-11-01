@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.cpp
-iostream
--
-fstream
--
-sstream
--
-algorithm
--
-array
-C:/Users/Robbe/CLionProjects/csv_parser/array
-map
-C:/Users/Robbe/CLionProjects/csv_parser/map
-csv_parser.h
-C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
-
 C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
 vector
 C:/Users/Robbe/CLionProjects/csv_parser/vector
@@ -29,4 +13,12 @@ string
 C:/Users/Robbe/CLionProjects/csv_parser/string
 map
 C:/Users/Robbe/CLionProjects/csv_parser/map
+
+C:/Users/Robbe/CLionProjects/csv_parser/main.cpp
+iostream
+-
+sstream
+-
+csv_parser.h
+C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
 

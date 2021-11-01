@@ -66,30 +66,32 @@ include CMakeFiles/csv_parser.dir/progress.make
 include CMakeFiles/csv_parser.dir/flags.make
 
 CMakeFiles/csv_parser.dir/main.cpp.obj: CMakeFiles/csv_parser.dir/flags.make
+CMakeFiles/csv_parser.dir/main.cpp.obj: CMakeFiles/csv_parser.dir/includes_CXX.rsp
 CMakeFiles/csv_parser.dir/main.cpp.obj: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Robbe\CLionProjects\csv_parser\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/csv_parser.dir/main.cpp.obj"
-	C:\mingw\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\csv_parser.dir\main.cpp.obj -c C:\Users\Robbe\CLionProjects\csv_parser\main.cpp
+	C:\mingw_installed\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\csv_parser.dir\main.cpp.obj -c C:\Users\Robbe\CLionProjects\csv_parser\main.cpp
 
 CMakeFiles/csv_parser.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csv_parser.dir/main.cpp.i"
-	C:\mingw\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Robbe\CLionProjects\csv_parser\main.cpp > CMakeFiles\csv_parser.dir\main.cpp.i
+	C:\mingw_installed\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Robbe\CLionProjects\csv_parser\main.cpp > CMakeFiles\csv_parser.dir\main.cpp.i
 
 CMakeFiles/csv_parser.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csv_parser.dir/main.cpp.s"
-	C:\mingw\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Robbe\CLionProjects\csv_parser\main.cpp -o CMakeFiles\csv_parser.dir\main.cpp.s
+	C:\mingw_installed\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Robbe\CLionProjects\csv_parser\main.cpp -o CMakeFiles\csv_parser.dir\main.cpp.s
 
 CMakeFiles/csv_parser.dir/csv_parser.cpp.obj: CMakeFiles/csv_parser.dir/flags.make
+CMakeFiles/csv_parser.dir/csv_parser.cpp.obj: CMakeFiles/csv_parser.dir/includes_CXX.rsp
 CMakeFiles/csv_parser.dir/csv_parser.cpp.obj: ../csv_parser.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Robbe\CLionProjects\csv_parser\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/csv_parser.dir/csv_parser.cpp.obj"
-	C:\mingw\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\csv_parser.dir\csv_parser.cpp.obj -c C:\Users\Robbe\CLionProjects\csv_parser\csv_parser.cpp
+	C:\mingw_installed\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\csv_parser.dir\csv_parser.cpp.obj -c C:\Users\Robbe\CLionProjects\csv_parser\csv_parser.cpp
 
 CMakeFiles/csv_parser.dir/csv_parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csv_parser.dir/csv_parser.cpp.i"
-	C:\mingw\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Robbe\CLionProjects\csv_parser\csv_parser.cpp > CMakeFiles\csv_parser.dir\csv_parser.cpp.i
+	C:\mingw_installed\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Robbe\CLionProjects\csv_parser\csv_parser.cpp > CMakeFiles\csv_parser.dir\csv_parser.cpp.i
 
 CMakeFiles/csv_parser.dir/csv_parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csv_parser.dir/csv_parser.cpp.s"
-	C:\mingw\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Robbe\CLionProjects\csv_parser\csv_parser.cpp -o CMakeFiles\csv_parser.dir\csv_parser.cpp.s
+	C:\mingw_installed\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Robbe\CLionProjects\csv_parser\csv_parser.cpp -o CMakeFiles\csv_parser.dir\csv_parser.cpp.s
 
 # Object files for target csv_parser
 csv_parser_OBJECTS = \
