@@ -504,3 +504,104 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Performing C SOURCE FILE Test COMPILER_HAS_THOSE_TOGGLES succeeded with the following output:
+Change Dir: C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/mingw_installed/mingw64/bin/mingw32-make.exe -f Makefile cmTC_d8951/fast && C:/mingw_installed/mingw64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_d8951.dir\build.make CMakeFiles/cmTC_d8951.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d8951.dir/src.c.obj
+C:\mingw_installed\mingw64\bin\gcc.exe -DCOMPILER_HAS_THOSE_TOGGLES  -Werror=pointer-arith -o CMakeFiles\cmTC_d8951.dir\src.c.obj -c C:\Users\Robbe\CLionProjects\csv_parser\cmake-build-debug\CMakeFiles\CMakeTmp\src.c
+Linking C executable cmTC_d8951.exe
+"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_d8951.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_d8951.dir/objects.a
+C:\mingw_installed\mingw64\bin\ar.exe cr CMakeFiles\cmTC_d8951.dir/objects.a @CMakeFiles\cmTC_d8951.dir\objects1.rsp
+C:\mingw_installed\mingw64\bin\gcc.exe -Wl,--whole-archive CMakeFiles\cmTC_d8951.dir/objects.a -Wl,--no-whole-archive -o cmTC_d8951.exe -Wl,--out-implib,libcmTC_d8951.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_d8951.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/mingw_installed/mingw64/bin/mingw32-make.exe -f Makefile cmTC_3d6df/fast && C:/mingw_installed/mingw64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_3d6df.dir\build.make CMakeFiles/cmTC_3d6df.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3d6df.dir/CheckIncludeFile.c.obj
+C:\mingw_installed\mingw64\bin\gcc.exe   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -std=gnu99 -o CMakeFiles\cmTC_3d6df.dir\CheckIncludeFile.c.obj -c C:\Users\Robbe\CLionProjects\csv_parser\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+Linking C executable cmTC_3d6df.exe
+"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_3d6df.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_3d6df.dir/objects.a
+C:\mingw_installed\mingw64\bin\ar.exe cr CMakeFiles\cmTC_3d6df.dir/objects.a @CMakeFiles\cmTC_3d6df.dir\objects1.rsp
+C:\mingw_installed\mingw64\bin\gcc.exe -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -Wl,--whole-archive CMakeFiles\cmTC_3d6df.dir/objects.a -Wl,--no-whole-archive -o cmTC_3d6df.exe -Wl,--out-implib,libcmTC_3d6df.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_3d6df.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/mingw_installed/mingw64/bin/mingw32-make.exe -f Makefile cmTC_e01d6/fast && C:/mingw_installed/mingw64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_e01d6.dir\build.make CMakeFiles/cmTC_e01d6.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e01d6.dir/src.c.obj
+C:\mingw_installed\mingw64\bin\gcc.exe -DCMAKE_HAVE_LIBC_PTHREAD  -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -o CMakeFiles\cmTC_e01d6.dir\src.c.obj -c C:\Users\Robbe\CLionProjects\csv_parser\cmake-build-debug\CMakeFiles\CMakeTmp\src.c
+Linking C executable cmTC_e01d6.exe
+"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_e01d6.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_e01d6.dir/objects.a
+C:\mingw_installed\mingw64\bin\ar.exe cr CMakeFiles\cmTC_e01d6.dir/objects.a @CMakeFiles\cmTC_e01d6.dir\objects1.rsp
+C:\mingw_installed\mingw64\bin\gcc.exe -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -Wl,--whole-archive CMakeFiles\cmTC_e01d6.dir/objects.a -Wl,--no-whole-archive -o cmTC_e01d6.exe -Wl,--out-implib,libcmTC_e01d6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_e01d6.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the include file dinput.h exists passed with the following output:
+Change Dir: C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/mingw_installed/mingw64/bin/mingw32-make.exe -f Makefile cmTC_f83ab/fast && C:/mingw_installed/mingw64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_f83ab.dir\build.make CMakeFiles/cmTC_f83ab.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f83ab.dir/CheckIncludeFile.c.obj
+C:\mingw_installed\mingw64\bin\gcc.exe   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -std=gnu99 -o CMakeFiles\cmTC_f83ab.dir\CheckIncludeFile.c.obj -c C:\Users\Robbe\CLionProjects\csv_parser\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+Linking C executable cmTC_f83ab.exe
+"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_f83ab.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_f83ab.dir/objects.a
+C:\mingw_installed\mingw64\bin\ar.exe cr CMakeFiles\cmTC_f83ab.dir/objects.a @CMakeFiles\cmTC_f83ab.dir\objects1.rsp
+C:\mingw_installed\mingw64\bin\gcc.exe -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -Wl,--whole-archive CMakeFiles\cmTC_f83ab.dir/objects.a -Wl,--no-whole-archive -o cmTC_f83ab.exe -Wl,--out-implib,libcmTC_f83ab.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_f83ab.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file xinput.h exists passed with the following output:
+Change Dir: C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/mingw_installed/mingw64/bin/mingw32-make.exe -f Makefile cmTC_fcce2/fast && C:/mingw_installed/mingw64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_fcce2.dir\build.make CMakeFiles/cmTC_fcce2.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fcce2.dir/CheckIncludeFile.c.obj
+C:\mingw_installed\mingw64\bin\gcc.exe   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -std=gnu99 -o CMakeFiles\cmTC_fcce2.dir\CheckIncludeFile.c.obj -c C:\Users\Robbe\CLionProjects\csv_parser\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+Linking C executable cmTC_fcce2.exe
+"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_fcce2.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_fcce2.dir/objects.a
+C:\mingw_installed\mingw64\bin\ar.exe cr CMakeFiles\cmTC_fcce2.dir/objects.a @CMakeFiles\cmTC_fcce2.dir\objects1.rsp
+C:\mingw_installed\mingw64\bin\gcc.exe -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -Wl,--whole-archive CMakeFiles\cmTC_fcce2.dir/objects.a -Wl,--no-whole-archive -o cmTC_fcce2.exe -Wl,--out-implib,libcmTC_fcce2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_fcce2.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+

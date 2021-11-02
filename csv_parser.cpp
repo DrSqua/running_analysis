@@ -17,9 +17,22 @@ std::ostream& operator<<(std::ostream &stream, exercise_instance &struct_instanc
             << "    movement_type: " << struct_instance.type_movement << std::endl
             << "    average_speed: " << struct_instance.average_speed << std::endl
             << "    max_speed: " << struct_instance.max_speed << std::endl
+            << "    average_tempo: " << struct_instance.average_tempo << std::endl
             << "    date: " << struct_instance.date << std::endl
             << "    map: " << struct_instance.map << std::endl;
     return stream;
+}
+
+std::ostream& operator<<(std::ostream &stream, polyline &polyline_instance) {
+    stream << polyline_instance.id << std::endl
+            << polyline_instance.summary_polyline << std::endl
+            << polyline_instance.resoure_state << std::endl;
+    return stream;
+}
+
+polyline parse_string_to_polyline(std::string& raw_string) {
+    polyline polyline_instance;
+    return polyline_instance;
 }
 
 void add_exercise_instance_to_dataframe(std::map<int,std::map<int, exercise_instance>>& dataframe, exercise_instance& struct_instance, int route, int poging) {
@@ -83,7 +96,7 @@ void parse_string_into_map_as_struct(std::map<int,std::map<int, exercise_instanc
         switch(i) {
             case 1: {
                 // Route en Poging parsen
-                std::stringstream ss_segment;  // Declaration
+                std::stringstream ss_segment;  // Declaration stringstream_segment (omda da nodig is voor die getline)
                 ss_segment << segment;  // string moet terug een stringstream object worden
                 for (int j = 0; j < 4; j++) {
                     std::getline(ss_segment, sub_segment, ' ');
@@ -117,7 +130,7 @@ void parse_string_into_map_as_struct(std::map<int,std::map<int, exercise_instanc
                 struct_instance.date = segment;
             }
             case 21: { // Map
-                struct_instance.map = segment;
+                struct_instance.map = parse_string_to_polyline(segment);
             }
             case 29: { // Average Speed
                 istringstream(segment) >> struct_instance.average_speed;
@@ -129,6 +142,7 @@ void parse_string_into_map_as_struct(std::map<int,std::map<int, exercise_instanc
                 break;
         }
     }
+    struct_instance.average_tempo = struct_instance.moving_time / struct_instance.distance;  // Dees moet nog is gefixt worden
     add_exercise_instance_to_dataframe(dataframe, struct_instance, route, poging);
 }
 

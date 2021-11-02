@@ -6,19 +6,17 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
-vector
-C:/Users/Robbe/CLionProjects/csv_parser/vector
-string
-C:/Users/Robbe/CLionProjects/csv_parser/string
-map
-C:/Users/Robbe/CLionProjects/csv_parser/map
+C:/Users/Robbe/CLionProjects/csv_parser/WindowLoop.cpp
+raylib.h
+C:/Users/Robbe/CLionProjects/csv_parser/raylib.h
+WindowLoop.h
+C:/Users/Robbe/CLionProjects/csv_parser/WindowLoop.h
 
-C:/Users/Robbe/CLionProjects/csv_parser/main.cpp
-iostream
+C:/Users/Robbe/CLionProjects/csv_parser/WindowLoop.h
+
+_deps/raylib-src/src/raylib.h
+stdarg.h
 -
-sstream
+stdbool.h
 -
-csv_parser.h
-C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
 

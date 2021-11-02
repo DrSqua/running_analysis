@@ -9,14 +9,23 @@
 #include "string"
 #include "map"
 
+struct polyline {
+    std::string id;
+    std::string summary_polyline;
+    int resoure_state;
+
+    friend std::ostream& operator<<(std::ostream &stream, polyline &polyline_instance);
+};
+
 struct exercise_instance {
     double distance{};
     int moving_time{};
     int elapsed_time{};
     std::string type_movement;
-    std::string map;
+    polyline map;
     double average_speed{};
     double max_speed{};
+    double average_tempo{};
     std::string date;
 
     friend std::ostream& operator<<(std::ostream &stream, exercise_instance &struct_instance);
