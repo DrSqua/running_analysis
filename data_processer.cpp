@@ -5,17 +5,11 @@
 #include "csv_parser.h"
 #include "data_processer.h"
 
-double mean_speed_per_route(std::map<int,std::map<int, exercise_instance>> dataframe, int route) {
+double mean_speed_per_route(std::map<int, route_struct> dataframe, int route) {
     double mean = 0;
-    int poging_count = 0;
-    std::map<int, exercise_instance> route_dataframe = dataframe[route];
 
-    for (std::pair<int, exercise_instance> kv_pair : route_dataframe)
-    {
-        exercise_instance& struct_instance = kv_pair.second;
-        mean += struct_instance.average_speed;
-        poging_count ++;
-    }
+    for (auto object : dataframe[route].average_speed)
+        mean += object;
 
-return mean/poging_count;
+return mean / dataframe[route].average_speed.size();
 }

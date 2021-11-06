@@ -8,6 +8,6 @@
 #include "map"
 #include "csv_parser.h"
 
-double mean_speed_per_route(std::map<int,std::map<int, exercise_instance>> dataframe, int route);
+double mean_speed_per_route(std::map<int, route_struct> dataframe, int route);
 
 #endif //CSV_PARSER_DATA_PROCESSER_H

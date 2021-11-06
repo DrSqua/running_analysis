@@ -7,11 +7,41 @@
 #IncludeRegexTransform: 
 
 C:/Users/Robbe/CLionProjects/csv_parser/WindowLoop.cpp
+iostream
+C:/Users/Robbe/CLionProjects/csv_parser/iostream
 raylib.h
 C:/Users/Robbe/CLionProjects/csv_parser/raylib.h
 WindowLoop.h
 C:/Users/Robbe/CLionProjects/csv_parser/WindowLoop.h
 
+C:/Users/Robbe/CLionProjects/csv_parser/WindowLoop.h
+csv_parser.h
+C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
+
+C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
+vector
+C:/Users/Robbe/CLionProjects/csv_parser/vector
+string
+C:/Users/Robbe/CLionProjects/csv_parser/string
+map
+C:/Users/Robbe/CLionProjects/csv_parser/map
+
+C:/Users/Robbe/CLionProjects/csv_parser/data_processer.h
+map
+C:/Users/Robbe/CLionProjects/csv_parser/map
+csv_parser.h
+C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
+
+C:/Users/Robbe/CLionProjects/csv_parser/main.cpp
+iostream
+-
+sstream
+-
+csv_parser.h
+C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
+data_processer.h
+C:/Users/Robbe/CLionProjects/csv_parser/data_processer.h
+WindowLoop.h
 C:/Users/Robbe/CLionProjects/csv_parser/WindowLoop.h
 
 _deps/raylib-src/src/raylib.h

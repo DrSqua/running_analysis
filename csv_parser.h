@@ -17,20 +17,23 @@ struct polyline {
     friend std::ostream& operator<<(std::ostream &stream, polyline &polyline_instance);
 };
 
-struct exercise_instance {
-    double distance{};
-    int moving_time{};
-    int elapsed_time{};
-    std::string type_movement;
-    polyline map;
-    double average_speed{};
-    double max_speed{};
-    double average_tempo{};
-    std::string date;
+struct route_struct {
+    std::vector<int> attempt;
+    std::vector<double> distance;;
+    std::vector<double> moving_time{};
+    std::vector<double> elapsed_time{};
+    std::vector<std::string> type_movement;
+    std::vector<polyline> map;
+    std::vector<double> average_speed{};
+    std::vector<double> max_speed{};
+    std::vector<double> average_tempo{};
+    std::vector<std::string> date;
 
-    friend std::ostream& operator<<(std::ostream &stream, exercise_instance &struct_instance);
+    friend std::ostream& operator<<(std::ostream &stream, route_struct &route_instance);
+
+    route_struct& operator+=(const route_struct& rhs);
 };
 
-std::map<int,std::map<int, exercise_instance>> parse_csv(const std::string& filepath);
+std::map<int, route_struct> parse_csv(const std::string& filepath);
 
 #endif //CSV_PARSER_CSV_PARSER_H

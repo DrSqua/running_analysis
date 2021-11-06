@@ -10,17 +10,33 @@
 
 using namespace std;
 
-std::ostream& operator<<(std::ostream &stream, exercise_instance &struct_instance) {
-    stream  << "    distance: " << struct_instance.distance << std::endl
-            << "    moving_time: " << struct_instance.moving_time << std::endl
-            << "    elapsed_time: " << struct_instance.elapsed_time << std::endl
-            << "    movement_type: " << struct_instance.type_movement << std::endl
-            << "    average_speed: " << struct_instance.average_speed << std::endl
-            << "    max_speed: " << struct_instance.max_speed << std::endl
-            << "    average_tempo: " << struct_instance.average_tempo << std::endl
-            << "    date: " << struct_instance.date << std::endl
-            << "    map: " << struct_instance.map << std::endl;
+std::ostream& operator<<(std::ostream &stream, route_struct &route_instance) {
+    stream  << "      attempt: " << "" << std::endl
+            << "     distance: " << "" << std::endl
+            << "  moving_time: " << "" << std::endl
+            << " elapsed_time: " << "" << std::endl
+            << "movement_type: " << "" << std::endl
+            << "average_speed: " << "" << std::endl
+            << "    max_speed: " << "" << std::endl
+            << "average_tempo: " << "" << std::endl
+            << "         date: " << "" << std::endl
+            << "          map: " << "" << std::endl;
     return stream;
+}
+
+route_struct &route_struct::operator+=(const route_struct &rhs) {
+    this->attempt.insert(std::end(this->attempt), std::begin(rhs.attempt), std::end(rhs.attempt));
+    this->distance.insert(std::end(this->distance), std::begin(rhs.distance), std::end(rhs.distance));
+    this->moving_time.insert(std::end(this->moving_time), std::begin(rhs.moving_time), std::end(rhs.moving_time));
+    this->elapsed_time.insert(std::end(this->elapsed_time), std::begin(rhs.elapsed_time), std::end(rhs.elapsed_time));
+    this->type_movement.insert(std::end(this->type_movement), std::begin(rhs.type_movement), std::end(rhs.type_movement));
+    this->average_speed.insert(std::end(this->average_speed), std::begin(rhs.average_speed), std::end(rhs.average_speed));
+    this->max_speed.insert(std::end(this->max_speed), std::begin(rhs.max_speed), std::end(rhs.max_speed));
+    this->average_tempo.insert(std::end(this->average_tempo), std::begin(rhs.average_tempo), std::end(rhs.average_tempo));
+    this->date.insert(std::end(this->date), std::begin(rhs.date), std::end(rhs.date));
+    this->map.insert(std::end(this->map), std::begin(rhs.map), std::end(rhs.map));
+
+    return *this;
 }
 
 std::ostream& operator<<(std::ostream &stream, polyline &polyline_instance) {
@@ -33,17 +49,6 @@ std::ostream& operator<<(std::ostream &stream, polyline &polyline_instance) {
 polyline parse_string_to_polyline(std::string& raw_string) {
     polyline polyline_instance;
     return polyline_instance;
-}
-
-void add_exercise_instance_to_dataframe(std::map<int,std::map<int, exercise_instance>>& dataframe, exercise_instance& struct_instance, int route, int poging) {
-    if (dataframe.find(route) != dataframe.end()) { // If there is a map for route #
-        dataframe[route].insert(std::make_pair(poging, struct_instance));
-    }
-    else { // If there is no map for route # yet
-        map<int, exercise_instance> route_map; // Route map is een dict met Pogingen als Keys
-        route_map.insert(make_pair(poging, struct_instance));
-        dataframe.insert(make_pair(route, route_map));
-    }
 }
 
 vector<std::string> parse_string_to_vector(const string& raw_string) {
@@ -80,14 +85,13 @@ vector<std::string> parse_string_to_vector(const string& raw_string) {
 }
 
 // FUNCTION
-void parse_string_into_map_as_struct(std::map<int,std::map<int, exercise_instance>>& dataframe, const string& raw_string) {
+void parse_string_into_map_as_struct(std::map<int, route_struct>& dataframe, const string& raw_string) {
     // Declaration
     std::vector<std::string> line;
     std::string segment; // Elk stukje da wordt gesplitst door de ;
-    std::string sub_segment; // Gwn voor de Route # Poging # nog is te splitsen
-    exercise_instance struct_instance;
+    std::string sub_segment; // Gwn voor de Route # attempt # nog is te splitsen
+    route_struct route_object;
     int route;
-    int poging;
 
     line = parse_string_to_vector(raw_string);
     for (int i=0; i<36; i++) {
@@ -95,7 +99,7 @@ void parse_string_into_map_as_struct(std::map<int,std::map<int, exercise_instanc
         segment.erase(std::remove(segment.begin(), segment.end(), '"'), segment.end());
         switch(i) {
             case 1: {
-                // Route en Poging parsen
+                // Route en attempt parsen
                 std::stringstream ss_segment;  // Declaration stringstream_segment (omda da nodig is voor die getline)
                 ss_segment << segment;  // string moet terug een stringstream object worden
                 for (int j = 0; j < 4; j++) {
@@ -105,7 +109,7 @@ void parse_string_into_map_as_struct(std::map<int,std::map<int, exercise_instanc
                             route = std::atoi(sub_segment.c_str());
                             break;
                         case 3:
-                            poging = std::atoi(sub_segment.c_str());
+                            route_object.attempt.push_back(std::atoi(sub_segment.c_str()));
                             break;
                         default:
                             break;
@@ -114,44 +118,60 @@ void parse_string_into_map_as_struct(std::map<int,std::map<int, exercise_instanc
                 break;
             }
             case 2: { // Distance
-                istringstream(segment) >> struct_instance.distance;
+                double d;
+                istringstream(segment) >> d;
+                route_object.distance.push_back(d);
                 break;
             }
             case 3: { // Moving time
-                istringstream(segment) >> struct_instance.moving_time;
+                double d;
+                istringstream(segment) >> d;
+                route_object.moving_time.push_back(d);
             }
             case 4: { // Elapsed time
-                istringstream(segment) >> struct_instance.elapsed_time;
+                double d;
+                istringstream(segment) >> d;
+                route_object.elapsed_time.push_back(d);
             }
             case 6: { // movement type
-                struct_instance.type_movement = segment;
+                route_object.type_movement.push_back(segment);
             }
             case 11: { // Local start date
-                struct_instance.date = segment;
+                route_object.date.push_back(segment);
             }
             case 21: { // Map
-                struct_instance.map = parse_string_to_polyline(segment);
+                route_object.map.push_back(parse_string_to_polyline(segment));
             }
             case 29: { // Average Speed
-                istringstream(segment) >> struct_instance.average_speed;
+                double d;
+                istringstream(segment) >> d;
+                route_object.average_speed.push_back(d);
             }
             case 30: { // Max speed
-                istringstream(segment) >> struct_instance.max_speed;
+                double d;
+                istringstream(segment) >> d;
+                route_object.max_speed.push_back(d);
             }
             default:
                 break;
         }
     }
-    struct_instance.average_tempo = struct_instance.moving_time / struct_instance.distance;  // Dees moet nog is gefixt worden
-    add_exercise_instance_to_dataframe(dataframe, struct_instance, route, poging);
+    route_object.average_tempo.push_back(route_object.moving_time.back() / route_object.distance.back());  // Dees moet nog is gefixt worden
+
+    if (dataframe.find(route) != dataframe.end()) { // If there is a map for route #
+        dataframe[route] += route_object;
+    }
+    else { // If there is no map for route # yet
+        dataframe.insert(make_pair(route, route_object));
+    }
 }
 
 // CSV PARSER
-std::map<int,std::map<int, exercise_instance>> parse_csv(const string& filepath) {
+std::map<int, route_struct> parse_csv(const string& filepath) {
     // Variable Declaration
-    std::map<int,std::map<int, exercise_instance>> dataframe; // Vector met op elke index een map
-    map<int, exercise_instance> route_map; // Een map per route
-    exercise_instance exercise_instance; // Een struct per poging
+    std::map<int, route_struct> dataframe; // Vector met op elke index een map
+    map<int, route_struct> route_map; // Een map per route
+    route_struct exercise_instance; // Een struct per attempt
     std::string raw_line; // Lijn die wordt gelezen (dus de rij van een csv)
 
     // Create connection
