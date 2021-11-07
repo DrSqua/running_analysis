@@ -2,16 +2,20 @@
 // Created by Robbe on 2/11/2021.
 //
 #include "iostream"
-#include "raylib.h"
 #include "WindowLoop.h"
 
 // Functions -------
 
 // RouteGraph ---------------------------------------------------------------------------------------------------------
-// Constructor
+// Constructors
+RouteGraph::RouteGraph() = default;
+
 RouteGraph::RouteGraph(int graph_width, int graph_height, route_struct& route_instance) {
+    this->surface_width = graph_width,
+    this->surface_height = graph_height;
+
     this->set_route(route_instance); // Set_Route calculates ook alle data
-    this->surface = GenImageColor(graph_width, graph_height, LIGHTGRAY);
+    this->surface = this->render_surface();
     std::cout << "RouteGraph created";
 }
 // Destructor
@@ -60,6 +64,18 @@ void RouteGraph::calculate_graph_sizes() {
         }
     }
 }
+// Rendering related
+Texture2D RouteGraph::render_surface() {
+    Image raw_image = GenImageColor(this->surface_width, this->surface_height, LIGHTGRAY);
+
+    return LoadTextureFromImage(raw_image);
+}
+
+void RouteGraph::resize(int new_width, int new_height) {
+    this->surface_width = new_width;
+    this->surface_height = new_height;
+    this->surface = render_surface();
+}
 
 
 // WINDOWLOOP Class ----------------------------------------------------------------------------------------------------
@@ -75,13 +91,11 @@ WindowLoop::WindowLoop(std::map<int, route_struct>& database, int screen_width, 
     this->top_space = top_space;
     this->side_space = side_space;
 
-
-
-    RouteGraph test_obj(screen_width - 2*side_space, screen_height - 2*top_space, this->database[this->selected_route]);
-    this->route_graph = test_obj;
-
-
     InitWindow(screen_width, screen_height, "Analysis");
+
+    this->route_graph = RouteGraph(screen_width - 2*side_space,
+                                   screen_height - 2*top_space,
+                                   this->database[this->selected_route]);
 
     SetTargetFPS(target_fps);
 }
@@ -98,8 +112,21 @@ void WindowLoop::handle_event() {
 }
 
 void WindowLoop::update() {
+    if (IsKeyPressed(KEY_B)) {
+        if (IsWindowMaximized()) {
+            RestoreWindow();
+        }
+        else {
+            MaximizeWindow();
+        }
+    }
     if (IsWindowResized()) {
+        // Adjust stored screen dimensions
+        this->screen_width = GetScreenWidth();
+        this->screen_height = GetScreenHeight();
 
+        // Rerender the graph's surface
+        this->route_graph.resize(screen_width - 2*side_space, screen_height - 2*top_space); // Doet ook automatisch ne re-render
     }
 }
 
@@ -112,7 +139,8 @@ void WindowLoop::draw() {
     char const *fps = s.c_str();  //convert string to char const *
 
     DrawRectangle(side_space, top_space, screen_width - 2*side_space, screen_height - 2*top_space, RED);
-    this->route_graph.draw();
+
+    DrawTexture(this->route_graph.get_surface(), side_space, top_space, RAYWHITE);
 
     DrawText(fps, top_space, side_space, 20, RED);
 

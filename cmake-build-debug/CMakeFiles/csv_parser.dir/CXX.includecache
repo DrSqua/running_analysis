@@ -9,32 +9,16 @@
 C:/Users/Robbe/CLionProjects/csv_parser/WindowLoop.cpp
 iostream
 C:/Users/Robbe/CLionProjects/csv_parser/iostream
-raylib.h
-C:/Users/Robbe/CLionProjects/csv_parser/raylib.h
 WindowLoop.h
 C:/Users/Robbe/CLionProjects/csv_parser/WindowLoop.h
 
 C:/Users/Robbe/CLionProjects/csv_parser/WindowLoop.h
+raylib.h
+C:/Users/Robbe/CLionProjects/csv_parser/raylib.h
 csv_parser.h
 C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
 data_processer.h
 C:/Users/Robbe/CLionProjects/csv_parser/data_processer.h
-
-C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.cpp
-iostream
--
-fstream
--
-sstream
--
-algorithm
--
-array
-C:/Users/Robbe/CLionProjects/csv_parser/array
-map
-C:/Users/Robbe/CLionProjects/csv_parser/map
-csv_parser.h
-C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
 
 C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
 vector
@@ -43,16 +27,6 @@ string
 C:/Users/Robbe/CLionProjects/csv_parser/string
 map
 C:/Users/Robbe/CLionProjects/csv_parser/map
-
-C:/Users/Robbe/CLionProjects/csv_parser/data_processer.cpp
-iostream
--
-algorithm
-C:/Users/Robbe/CLionProjects/csv_parser/algorithm
-csv_parser.h
-C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
-data_processer.h
-C:/Users/Robbe/CLionProjects/csv_parser/data_processer.h
 
 C:/Users/Robbe/CLionProjects/csv_parser/data_processer.h
 csv_parser.h

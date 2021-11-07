@@ -4,6 +4,8 @@
 
 #ifndef CSV_PARSER_WINDOWLOOP_H
 #define CSV_PARSER_WINDOWLOOP_H
+
+#include "raylib.h"
 #include "csv_parser.h"
 #include "data_processer.h"
 
@@ -17,12 +19,14 @@
 class RouteGraph {
 public:
     // Constructor
+    RouteGraph();
     RouteGraph(int graph_width, int graph_height, route_struct& route_instance);
 
     // Destructor
     ~RouteGraph();
 
     //Getters and Setters
+    Texture2D get_surface() {return this->surface;}
     route_struct get_route_struct() { return this->route_instance;} // Get Route
     void set_route(const route_struct& route_instance); // Set route
 
@@ -35,14 +39,14 @@ public:
     void calculate_graph_sizes();
 
     // Render functions
-    void render_surface();
-
-    // Drawing
-    void draw();
+    Texture2D render_surface();
+    void resize(int new_width, int new_height);
 
 private:
     // Surface
-    Image surface{};
+    int surface_width;
+    int surface_height;
+    Texture2D surface;
 
     // Structs
     route_struct route_instance; // Raw data
@@ -65,6 +69,9 @@ public:
     [[nodiscard]] bool is_loop_good() const {
         return running;
     }
+    [[nodiscard]] bool ismaxwindow() const {
+        return max_window;
+    }
 
     void handle_event();
 
@@ -79,6 +86,7 @@ private:
 
     // main screen and loop related
     bool running = true;
+    bool max_window = false;
 
     int screen_width;
     int screen_height;
