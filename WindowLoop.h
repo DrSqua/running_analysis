@@ -5,56 +5,52 @@
 #ifndef CSV_PARSER_WINDOWLOOP_H
 #define CSV_PARSER_WINDOWLOOP_H
 #include "csv_parser.h"
+#include "data_processer.h"
 
 // Structs---- ---------------------------------------------------------------------------------------------------------
 
-// Route statistics struct ( keeps min, max
-struct route_statistic_data {
-    // First element is min, second element is average, third is mean, fourth is max
-    std::array<double*, 4> distance;
-    std::array<int*, 4> moving_time;
-    std::array<int*, 4> elapsed_time;
-    std::array<double*, 4> average_speed;
-    std::array<double*, 4> max_speed;
-    std::array<double*, 4> average_tempo;
-};
 
-struct route_graph_data {
-    // First element is startx, second is furthestx, third is startx, fourth is furthesty
-    std::array<double*, 4> distance;
-    std::array<int*, 4> moving_time;
-    std::array<int*, 4> elapsed_time;
-    std::array<double*, 4> average_speed;
-    std::array<double*, 4> max_speed;
-    std::array<double*, 4> average_tempo;
-};
+// Buttons ------------------------------------------------------------------------------------------------------------
+
 
 // RouteGraph ---------------------------------------------------------------------------------------------------------
 class RouteGraph {
 public:
     // Constructor
-    RouteGraph();
+    RouteGraph(int graph_width, int graph_height, route_struct& route_instance);
 
     // Destructor
     ~RouteGraph();
 
     //Getters and Setters
     route_struct get_route_struct() { return this->route_instance;} // Get Route
-    void set_route(route_struct& route_instance); // Set route
+    void set_route(const route_struct& route_instance); // Set route
+
+    route_statistic_struct get_statistics_struct() { return this->route_statistics;} // Get Route statistics
 
 
     // Calc functions
-    void calculate_data();
+    void calculate_data();  // Calc statistics data en graph size
 
     void calculate_graph_sizes();
 
     // Render functions
     void render_surface();
 
-private:
-    route_struct route_instance;
+    // Drawing
+    void draw();
 
-    route_statistic_data route_statistics;
+private:
+    // Surface
+    Image surface{};
+
+    // Structs
+    route_struct route_instance; // Raw data
+    route_statistic_struct route_statistics{}; // Statistical values struct
+
+    // Graph options
+    std::vector<int> x_axis_labels = {1}; // Which data to place on x-axis (standard attempt)
+    std::vector<int> y_axis_labels = {7}; // Which data to place on y-axis (standard speed)
 };
 
 // WINDOWLOOP Class ----------------------------------------------------------------------------------------------------
@@ -66,7 +62,7 @@ public:
     ~WindowLoop();
 
     // Event loop
-    bool is_loop_good() const {
+    [[nodiscard]] bool is_loop_good() const {
         return running;
     }
 
@@ -92,8 +88,10 @@ private:
 
     // Graph related
     std::map<int, route_struct> database;
+
     RouteGraph route_graph;
-    std::vector<int> selected_data;
+
+    int selected_route = 1;
 };
 
 #endif //CSV_PARSER_WINDOWLOOP_H

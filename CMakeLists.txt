@@ -28,7 +28,7 @@ if (NOT raylib_FOUND) # If there's none, fetch and build raylib
     endif()
 
 endif()
-
+set(CMAKE_CXX_STANDARD 17)
 # This is the main part:
 add_executable(${PROJECT_NAME} main.cpp csv_parser.h csv_parser.cpp data_processer.h data_processer.cpp WindowLoop.cpp WindowLoop.h)
 #set(raylib_VERBOSE 1)

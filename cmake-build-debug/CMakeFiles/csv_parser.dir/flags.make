@@ -6,5 +6,5 @@ CXX_DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
 
 CXX_INCLUDES = @CMakeFiles/csv_parser.dir/includes_CXX.rsp
 
-CXX_FLAGS = -g
+CXX_FLAGS = -g -std=gnu++17
 

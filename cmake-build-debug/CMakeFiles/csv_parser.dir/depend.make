@@ -5,6 +5,7 @@ CMakeFiles/csv_parser.dir/WindowLoop.cpp.obj: \
  ../WindowLoop.cpp \
  ../WindowLoop.h \
  ../csv_parser.h \
+ ../data_processer.h \
  _deps/raylib-src/src/raylib.h
 CMakeFiles/csv_parser.dir/csv_parser.cpp.obj: \
  ../csv_parser.cpp \
