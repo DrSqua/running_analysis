@@ -12,7 +12,7 @@ int main() {
     string filepath = R"(C:\Users\Robbe\CLionProjects\csv_parser\emUUN_a8.csv)";
     dataframe = parse_running_csv(filepath);
 
-    // std::cout << dataframe[1];
+    std::cout << dataframe[1];
 
     WindowLoop window(dataframe, 800, 600, 60, 16, 16);
     while (window.is_loop_good()) {

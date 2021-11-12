@@ -10,7 +10,13 @@
 #include "data_processer.h"
 
 // Structs---- ---------------------------------------------------------------------------------------------------------
-
+struct graph_format_struct {
+    float line_thickness;
+    int map_width;
+    int map_height;
+    float align_x;
+    float align_y;
+};
 
 // Buttons ------------------------------------------------------------------------------------------------------------
 
@@ -28,18 +34,18 @@ public:
     //Getters and Setters
     Texture2D get_surface() {return this->surface;}
     route_struct get_route_struct() { return this->route_instance;} // Get Route
-    void set_route(const route_struct& route_instance); // Set route
+    void set_route(const route_struct& new_route_instance); // Set route
 
-    route_statistic_struct get_statistics_struct() { return this->route_statistics;} // Get Route statistics
+    route_statistic_struct get_statistics_struct() { return this->route_statistics;} // struct of statistics_struct 's
 
 
     // Calc functions
-    void calculate_data();  // Calc statistics data en graph size
-
-    void calculate_graph_sizes();
+    [[nodiscard]] graph_format_struct calculate_graph_format_struct() const;
+    void normalise_points();
+    void align_points();
 
     // Render functions
-    Texture2D render_surface();
+    [[nodiscard]] Texture2D render_surface();
     void resize(int new_width, int new_height);
 
 private:
@@ -48,13 +54,24 @@ private:
     int surface_height;
     Texture2D surface;
 
-    // Structs
+    // Data
     route_struct route_instance; // Raw data
-    route_statistic_struct route_statistics{}; // Statistical values struct
+    route_statistic_struct route_statistics; // struct of statistics_struct 's (min, max, mean, median all per datatype)
 
     // Graph options
+    graph_format_struct graph_format;
+
+    std::array<Color, 6> dark_colors = {DARKBLUE, DARKGREEN, ORANGE, MAROON, DARKPURPLE, DARKBROWN};
+    std::array<Color, 6> medium_colors = {SKYBLUE, GREEN, YELLOW, PINK, PURPLE, BEIGE};
+    std::array<Color, 6> light_colors = {BLUE, LIME, GOLD, RED, VIOLET, BROWN};
+
     std::vector<int> x_axis_labels = {1}; // Which data to place on x-axis (standard attempt)
     std::vector<int> y_axis_labels = {7}; // Which data to place on y-axis (standard speed)
+
+    std::vector<std::vector<Vector2>> normalised_points; // Punten op schaal 0.0f tot 10.0f
+    std::vector<std::vector<Vector2>> alligned_points;  // Calculated point, omgezet naar de breedte van de graph map
+
+    std::vector<int> x_points;
 };
 
 // WINDOWLOOP Class ----------------------------------------------------------------------------------------------------

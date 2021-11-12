@@ -31,18 +31,8 @@ C:/Users/Robbe/CLionProjects/csv_parser/map
 C:/Users/Robbe/CLionProjects/csv_parser/data_processer.h
 csv_parser.h
 C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
-
-C:/Users/Robbe/CLionProjects/csv_parser/main.cpp
-iostream
+cmath
 -
-sstream
--
-csv_parser.h
-C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h
-data_processer.h
-C:/Users/Robbe/CLionProjects/csv_parser/data_processer.h
-WindowLoop.h
-C:/Users/Robbe/CLionProjects/csv_parser/WindowLoop.h
 
 _deps/raylib-src/src/raylib.h
 stdarg.h
