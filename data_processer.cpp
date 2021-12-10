@@ -39,15 +39,22 @@ double calc_scheefheid(const std::vector<double>& input_vector, double mean) {
 // Statistical Main ------------------------------------------------------------------------------------------
 // Zet een vector van de waardes per attempt om naar de statistische vector
 statistics_struct calc_statistics_vector(const std::vector<double>& input_vector) {
-    const auto [min, max] = std::minmax_element(begin(input_vector), end(input_vector));
-    double mean = mean_of_vector(input_vector);
-    double variantie = variantie_of_vector(input_vector, mean);
-    return (statistics_struct)
-    {*max, *min, mean, median_of_vector(input_vector), variantie, calc_standaardafwijking(variantie), calc_scheefheid(input_vector, mean)};
+    if (!input_vector.empty()) {
+        const auto[min, max] = std::minmax_element(begin(input_vector), end(input_vector));
+        double mean = mean_of_vector(input_vector);
+        double variantie = variantie_of_vector(input_vector, mean);
+        return (statistics_struct)
+                {*max, *min, mean, median_of_vector(input_vector), variantie, calc_standaardafwijking(variantie),
+                 calc_scheefheid(input_vector, mean)};
+    } else
+        return (statistics_struct) {0, 0, 0, 0, 0, 0};
 }
 statistics_struct calc_statistics_struct(const std::vector<int>& input_vector) {
+    if (!input_vector.empty()) {
     const auto [min, max] = std::minmax_element(begin(input_vector), end(input_vector));
     return (statistics_struct){double(*max), double(*min), 0, 0, 0, 0};
+        } else
+        return (statistics_struct){0, 0, 0, 0, 0, 0};
 }
 
 

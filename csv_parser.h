@@ -42,6 +42,13 @@ struct route_struct {
     std::vector<double> average_tempo{};
     std::vector<start_time> start_time;
 
+    [[nodiscard]] bool empty() const {
+        if (attempt.empty()) // TODO alle vectors checken (luie kut)
+            return true;
+        else
+            return false;
+    }
+
     friend std::ostream& operator<<(std::ostream &stream, route_struct &route_instance);
 
     route_struct& operator+=(const route_struct& rhs);
