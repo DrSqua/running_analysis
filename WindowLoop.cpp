@@ -127,20 +127,25 @@ void RouteGraph::normalise_points() {  // Werkt atm alleen nog maar met 1 label 
 void RouteGraph::align_points() {  // Neemt de normalised_point en converteerd ze punten die op de map graph kunnen
     if (!normalised_points.empty()) {
         alligned_points.reserve(normalised_points.size());
-        for (const auto &norm_point_vector: this->normalised_points) {
 
-            std::vector<GraphPoint> align_point_vector;
-            align_point_vector.reserve(norm_point_vector.size()); // Dees was een aanwijzing, nog is goe op te zoeken wa dees doet
+        for (const auto &norm_point_vector: normalised_points) {
+            if (!norm_point_vector.empty()) {
 
-            for (auto point: norm_point_vector)
-                Vector2 pos = (Vector2) {point.pos.x * graph_format.align_x, point.pos.y * graph_format.align_y};
-                align_point_vector.push_back((GraphPoint) {});
+                std::vector<GraphPoint> align_point_vector;
+                align_point_vector.reserve(
+                        norm_point_vector.size()); //! Dees was een aanwijzing, nog is goe op te zoeken wa dees doet
 
-            alligned_points.push_back(align_point_vector);
+                for (auto point: norm_point_vector) { // TODO Normaliseren werkt nog ni echt zo goed
+                    Vector2 render_pos = (Vector2) {point.pos.x * 20, point.pos.y * 20};
+                    align_point_vector.push_back((GraphPoint) {render_pos});
+                }
+                alligned_points.push_back(align_point_vector);
+            } else
+                throw std::invalid_argument ("RouteGraph::align_points Krijgt een lege normalised_point_vector die wil in de normalised_points zit");
         }
     }
     else
-        normalise_points();
+        throw std::invalid_argument ("RouteGraph::align_points krijgt een lege normalised_points vector");
 }
 
 void RouteGraph::render_static_surface() {
@@ -152,7 +157,7 @@ void RouteGraph::render_static_surface() {
     std::cout << std::endl << std::endl << surface_width << "   " << surface_height << std::endl;
     // Axis
     float width_offset = graph_format.line_thickness/ 2;
-    DrawLineEx((Vector2){0.0f, width_offset}, (Vector2){float(surface_width), width_offset}, graph_format.line_thickness, DARKGRAY); // x-as
+    DrawLineEx((Vector2){0.0f, (float)surface_height - width_offset}, (Vector2){float(surface_width), (float)surface_height - width_offset}, graph_format.line_thickness, DARKGRAY); // x-as
     DrawLineEx((Vector2){width_offset, 0.0f}, (Vector2){width_offset, float(surface_height)}, graph_format.line_thickness, DARKGRAY); // y-as
 
     // Points
@@ -164,8 +169,8 @@ void RouteGraph::render_static_surface() {
 
             for (GraphPoint point: point_vector) {
                 DrawCircleV(point.pos, graph_format.line_thickness/4, dark_color);
-                DrawRectangleV((Vector2) {point.pos.x, graph_format.line_thickness}, (Vector2) {graph_format.line_thickness/2, graph_format.line_thickness}, med_color);
-                DrawRectangleV((Vector2) {graph_format.line_thickness, point.pos.y}, (Vector2) {graph_format.line_thickness, graph_format.line_thickness/2}, med_color);
+                DrawRectangleV((Vector2) {point.pos.x, (float)surface_height - 2*graph_format.line_thickness}, (Vector2) {graph_format.line_thickness/2, graph_format.line_thickness}, med_color); //! X-labels
+                DrawRectangleV((Vector2) {graph_format.line_thickness, point.pos.y}, (Vector2) {graph_format.line_thickness, graph_format.line_thickness/2}, med_color); //! Y-labels
             }
         }
     }
