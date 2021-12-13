@@ -256,6 +256,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/GUI/GUI.cpp">
+			<Option target="csv_parser"/>
+		</Unit>
+		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/GUI/GUI.h">
+			<Option target="csv_parser"/>
+		</Unit>
+		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/RouteGraph/RouteGraph.cpp">
+			<Option target="csv_parser"/>
+		</Unit>
+		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/RouteGraph/RouteGraph.h">
+			<Option target="csv_parser"/>
+		</Unit>
 		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/WindowLoop.cpp">
 			<Option target="csv_parser"/>
 		</Unit>
@@ -418,16 +430,16 @@
 		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/_deps/raylib-src/src/utils.h">
 			<Option target="raylib"/>
 		</Unit>
-		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.cpp">
+		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/data_processing/csv_parser.cpp">
 			<Option target="csv_parser"/>
 		</Unit>
-		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/csv_parser.h">
+		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/data_processing/csv_parser.h">
 			<Option target="csv_parser"/>
 		</Unit>
-		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/data_processer.cpp">
+		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/data_processing/data_processer.cpp">
 			<Option target="csv_parser"/>
 		</Unit>
-		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/data_processer.h">
+		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/data_processing/data_processer.h">
 			<Option target="csv_parser"/>
 		</Unit>
 		<Unit filename="C:/Users/Robbe/CLionProjects/csv_parser/main.cpp">

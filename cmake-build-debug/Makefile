@@ -219,6 +219,54 @@ glfw/fast:
 	$(MAKE) $(MAKESILENT) -f _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/build
 .PHONY : glfw/fast
 
+GUI/GUI.obj: GUI/GUI.cpp.obj
+.PHONY : GUI/GUI.obj
+
+# target to build an object file
+GUI/GUI.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/GUI/GUI.cpp.obj
+.PHONY : GUI/GUI.cpp.obj
+
+GUI/GUI.i: GUI/GUI.cpp.i
+.PHONY : GUI/GUI.i
+
+# target to preprocess a source file
+GUI/GUI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/GUI/GUI.cpp.i
+.PHONY : GUI/GUI.cpp.i
+
+GUI/GUI.s: GUI/GUI.cpp.s
+.PHONY : GUI/GUI.s
+
+# target to generate assembly for a file
+GUI/GUI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/GUI/GUI.cpp.s
+.PHONY : GUI/GUI.cpp.s
+
+RouteGraph/RouteGraph.obj: RouteGraph/RouteGraph.cpp.obj
+.PHONY : RouteGraph/RouteGraph.obj
+
+# target to build an object file
+RouteGraph/RouteGraph.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/RouteGraph/RouteGraph.cpp.obj
+.PHONY : RouteGraph/RouteGraph.cpp.obj
+
+RouteGraph/RouteGraph.i: RouteGraph/RouteGraph.cpp.i
+.PHONY : RouteGraph/RouteGraph.i
+
+# target to preprocess a source file
+RouteGraph/RouteGraph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/RouteGraph/RouteGraph.cpp.i
+.PHONY : RouteGraph/RouteGraph.cpp.i
+
+RouteGraph/RouteGraph.s: RouteGraph/RouteGraph.cpp.s
+.PHONY : RouteGraph/RouteGraph.s
+
+# target to generate assembly for a file
+RouteGraph/RouteGraph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/RouteGraph/RouteGraph.cpp.s
+.PHONY : RouteGraph/RouteGraph.cpp.s
+
 WindowLoop.obj: WindowLoop.cpp.obj
 .PHONY : WindowLoop.obj
 
@@ -243,53 +291,53 @@ WindowLoop.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/WindowLoop.cpp.s
 .PHONY : WindowLoop.cpp.s
 
-csv_parser.obj: csv_parser.cpp.obj
-.PHONY : csv_parser.obj
+data_processing/csv_parser.obj: data_processing/csv_parser.cpp.obj
+.PHONY : data_processing/csv_parser.obj
 
 # target to build an object file
-csv_parser.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/csv_parser.cpp.obj
-.PHONY : csv_parser.cpp.obj
+data_processing/csv_parser.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/data_processing/csv_parser.cpp.obj
+.PHONY : data_processing/csv_parser.cpp.obj
 
-csv_parser.i: csv_parser.cpp.i
-.PHONY : csv_parser.i
+data_processing/csv_parser.i: data_processing/csv_parser.cpp.i
+.PHONY : data_processing/csv_parser.i
 
 # target to preprocess a source file
-csv_parser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/csv_parser.cpp.i
-.PHONY : csv_parser.cpp.i
+data_processing/csv_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/data_processing/csv_parser.cpp.i
+.PHONY : data_processing/csv_parser.cpp.i
 
-csv_parser.s: csv_parser.cpp.s
-.PHONY : csv_parser.s
+data_processing/csv_parser.s: data_processing/csv_parser.cpp.s
+.PHONY : data_processing/csv_parser.s
 
 # target to generate assembly for a file
-csv_parser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/csv_parser.cpp.s
-.PHONY : csv_parser.cpp.s
+data_processing/csv_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/data_processing/csv_parser.cpp.s
+.PHONY : data_processing/csv_parser.cpp.s
 
-data_processer.obj: data_processer.cpp.obj
-.PHONY : data_processer.obj
+data_processing/data_processer.obj: data_processing/data_processer.cpp.obj
+.PHONY : data_processing/data_processer.obj
 
 # target to build an object file
-data_processer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/data_processer.cpp.obj
-.PHONY : data_processer.cpp.obj
+data_processing/data_processer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/data_processing/data_processer.cpp.obj
+.PHONY : data_processing/data_processer.cpp.obj
 
-data_processer.i: data_processer.cpp.i
-.PHONY : data_processer.i
+data_processing/data_processer.i: data_processing/data_processer.cpp.i
+.PHONY : data_processing/data_processer.i
 
 # target to preprocess a source file
-data_processer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/data_processer.cpp.i
-.PHONY : data_processer.cpp.i
+data_processing/data_processer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/data_processing/data_processer.cpp.i
+.PHONY : data_processing/data_processer.cpp.i
 
-data_processer.s: data_processer.cpp.s
-.PHONY : data_processer.s
+data_processing/data_processer.s: data_processing/data_processer.cpp.s
+.PHONY : data_processing/data_processer.s
 
 # target to generate assembly for a file
-data_processer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/data_processer.cpp.s
-.PHONY : data_processer.cpp.s
+data_processing/data_processer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/data_processing/data_processer.cpp.s
+.PHONY : data_processing/data_processer.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -332,15 +380,21 @@ help:
 	@echo ... csv_parser
 	@echo ... glfw
 	@echo ... raylib
+	@echo ... GUI/GUI.obj
+	@echo ... GUI/GUI.i
+	@echo ... GUI/GUI.s
+	@echo ... RouteGraph/RouteGraph.obj
+	@echo ... RouteGraph/RouteGraph.i
+	@echo ... RouteGraph/RouteGraph.s
 	@echo ... WindowLoop.obj
 	@echo ... WindowLoop.i
 	@echo ... WindowLoop.s
-	@echo ... csv_parser.obj
-	@echo ... csv_parser.i
-	@echo ... csv_parser.s
-	@echo ... data_processer.obj
-	@echo ... data_processer.i
-	@echo ... data_processer.s
+	@echo ... data_processing/csv_parser.obj
+	@echo ... data_processing/csv_parser.i
+	@echo ... data_processing/csv_parser.s
+	@echo ... data_processing/data_processer.obj
+	@echo ... data_processing/data_processer.i
+	@echo ... data_processing/data_processer.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

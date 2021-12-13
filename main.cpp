@@ -1,8 +1,8 @@
 #include <iostream>
 #include <sstream>
 
-#include "csv_parser.h"
-#include "data_processer.h"
+#include "data_processing/csv_parser.h"
+#include "data_processing/data_processer.h"
 #include "WindowLoop.h"
 
 using namespace std;
@@ -15,7 +15,7 @@ int main() {
 
     WindowLoop window(dataframe, 800, 600, 60, 16, 100);
     while (window.is_loop_good()) {
-        window.handle_event();
+        window.handle_events();
         window.update();
         window.draw();
     }

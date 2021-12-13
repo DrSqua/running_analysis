@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/csv_parser.dir/GUI/GUI.cpp.obj"
+  "CMakeFiles/csv_parser.dir/RouteGraph/RouteGraph.cpp.obj"
   "CMakeFiles/csv_parser.dir/WindowLoop.cpp.obj"
-  "CMakeFiles/csv_parser.dir/csv_parser.cpp.obj"
-  "CMakeFiles/csv_parser.dir/data_processer.cpp.obj"
+  "CMakeFiles/csv_parser.dir/data_processing/csv_parser.cpp.obj"
+  "CMakeFiles/csv_parser.dir/data_processing/data_processer.cpp.obj"
   "CMakeFiles/csv_parser.dir/main.cpp.obj"
   "csv_parser.exe"
   "csv_parser.exe.manifest"

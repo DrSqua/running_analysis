@@ -30,6 +30,6 @@ if (NOT raylib_FOUND) # If there's none, fetch and build raylib
 endif()
 set(CMAKE_CXX_STANDARD 17)
 # This is the main part:
-add_executable(${PROJECT_NAME} main.cpp csv_parser.h csv_parser.cpp data_processer.h data_processer.cpp WindowLoop.cpp WindowLoop.h)
+add_executable(${PROJECT_NAME} main.cpp data_processing/csv_parser.h data_processing/csv_parser.cpp data_processing/data_processer.h data_processing/data_processer.cpp WindowLoop.cpp WindowLoop.h GUI/GUI.cpp GUI/GUI.h RouteGraph/RouteGraph.cpp RouteGraph/RouteGraph.h)
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} raylib)
