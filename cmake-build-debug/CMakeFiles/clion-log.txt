@@ -1,8 +1,8 @@
-"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" C:\Users\Robbe\CLionProjects\csv_parser
+"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Robbe\CLionProjects\running_analysis
 -- Populating raylib
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/_deps/raylib-subbuild
+-- Build files have been written to: C:/Users/Robbe/CLionProjects/running_analysis/cmake-build-debug/_deps/raylib-subbuild
 [100%] Built target raylib-populate
 -- Testing if -Werror=pointer-arith can be used -- compiles
 -- Testing if -Werror=implicit-function-declaration can be used -- compiles
@@ -17,4 +17,4 @@
 --   GRAPHICS=GRAPHICS_API_OPENGL_33
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug
+-- Build files have been written to: C:/Users/Robbe/CLionProjects/running_analysis/cmake-build-debug

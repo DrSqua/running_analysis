@@ -1,23 +1,46 @@
 #include <iostream>
 #include <sstream>
 
-#include "data_processing/csv_parser.h"
-#include "data_processing/data_processer.h"
-#include "WindowLoop.h"
+#include "raylib.h"
+#include "UI/Routegraph.h"
 
-using namespace std;
+#include "parsing/csv_parser.h"
+#include "data_processing/data_processer.h"
 
 int main() {
-    std::map<int, route_struct> dataframe;
-    string filepath = R"(C:\Users\Robbe\CLionProjects\csv_parser\emUUN_a8.csv)";
-    dataframe = parse_running_csv(filepath);
-    // std::cout << dataframe[1];
+    std::string filepath = R"(C:\Users\Robbe\CLionProjects\running_analysis\emUUN_a8.csv)";
 
-    WindowLoop window(dataframe, 800, 600, 60, 16, 100);
-    while (window.is_loop_good()) {
-        window.handle_events();
-        window.update();
-        window.draw();
+    std::map<int, RouteDataframe> route_database = parse_running_csv(filepath);
+
+    auto route = route_database.at(1);
+    route.reverse();
+    std::cout << route << std::endl;
+
+
+    int screenWidth = 800;
+    int screenHeight = 600;
+
+    InitWindow(screenWidth, screenHeight, "Window Name");
+    SetTargetFPS(60);
+
+    Routegraph routegraph;
+    std::cout << routegraph.addRoute(route);
+
+    while (!WindowShouldClose()) {
+        // Handle Input
+
+        // Update
+
+        // Draw
+        BeginDrawing();
+        ClearBackground(DARKGRAY);
+
+        routegraph.drawDynamic();
+
+        DrawFPS(4, 4);
+        EndDrawing();
     }
+    CloseWindow();
+
     return 0;
 }

@@ -5,7 +5,7 @@
 #ifndef CSV_PARSER_DATA_PROCESSER_H
 #define CSV_PARSER_DATA_PROCESSER_H
 
-#include "csv_parser.h"
+#include "../parsing/csv_parser.h"
 #include <cmath>
 
 // Structs -------------------------------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ double variantie_of_vector(const std::vector<double>& input_vector, double mean)
 
 //! Main statistics
 statistics_struct calc_statistics_vector(const std::vector<double>& input_vector);
-route_statistic_struct calculate_statistics_data(route_struct& route_instance);
+route_statistic_struct calculate_statistics_data(RouteDataframe& route_instance);
 
 
 #endif //CSV_PARSER_DATA_PROCESSER_H

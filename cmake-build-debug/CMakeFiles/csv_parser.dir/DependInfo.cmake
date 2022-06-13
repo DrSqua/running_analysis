@@ -4,39 +4,20 @@ set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
 
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Robbe/CLionProjects/csv_parser/GUI/GUI.cpp" "C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/csv_parser.dir/GUI/GUI.cpp.obj"
-  "C:/Users/Robbe/CLionProjects/csv_parser/RouteGraph/RouteGraph.cpp" "C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/csv_parser.dir/RouteGraph/RouteGraph.cpp.obj"
-  "C:/Users/Robbe/CLionProjects/csv_parser/WindowLoop.cpp" "C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/csv_parser.dir/WindowLoop.cpp.obj"
-  "C:/Users/Robbe/CLionProjects/csv_parser/data_processing/csv_parser.cpp" "C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/csv_parser.dir/data_processing/csv_parser.cpp.obj"
-  "C:/Users/Robbe/CLionProjects/csv_parser/data_processing/data_processer.cpp" "C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/csv_parser.dir/data_processing/data_processer.cpp.obj"
-  "C:/Users/Robbe/CLionProjects/csv_parser/main.cpp" "C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/CMakeFiles/csv_parser.dir/main.cpp.obj"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# Preprocessor definitions for this target.
-set(CMAKE_TARGET_DEFINITIONS_CXX
-  "GRAPHICS_API_OPENGL_33"
-  "PLATFORM_DESKTOP"
-  )
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "_deps/raylib-src/src"
-  "_deps/raylib-src/src/external/glfw/include"
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/Robbe/CLionProjects/running_analysis/UI/Routegraph.cpp" "CMakeFiles/csv_parser.dir/UI/Routegraph.cpp.obj" "gcc" "CMakeFiles/csv_parser.dir/UI/Routegraph.cpp.obj.d"
+  "C:/Users/Robbe/CLionProjects/running_analysis/data_processing/data_processer.cpp" "CMakeFiles/csv_parser.dir/data_processing/data_processer.cpp.obj" "gcc" "CMakeFiles/csv_parser.dir/data_processing/data_processer.cpp.obj.d"
+  "C:/Users/Robbe/CLionProjects/running_analysis/main.cpp" "CMakeFiles/csv_parser.dir/main.cpp.obj" "gcc" "CMakeFiles/csv_parser.dir/main.cpp.obj.d"
+  "C:/Users/Robbe/CLionProjects/running_analysis/parsing/csv_parser.cpp" "CMakeFiles/csv_parser.dir/parsing/csv_parser.cpp.obj" "gcc" "CMakeFiles/csv_parser.dir/parsing/csv_parser.cpp.obj.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/_deps/raylib-build/raylib/CMakeFiles/raylib.dir/DependInfo.cmake"
-  "C:/Users/Robbe/CLionProjects/csv_parser/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
+  "C:/Users/Robbe/CLionProjects/running_analysis/cmake-build-debug/_deps/raylib-build/raylib/CMakeFiles/raylib.dir/DependInfo.cmake"
+  "C:/Users/Robbe/CLionProjects/running_analysis/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

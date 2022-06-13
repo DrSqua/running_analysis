@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include "algorithm"
-#include "csv_parser.h"
+#include "../parsing/csv_parser.h"
 #include "data_processer.h"
 
 // Simpel Statistics
@@ -58,8 +58,8 @@ statistics_struct calc_statistics_struct(const std::vector<int>& input_vector) {
 }
 
 
-// Maakt een route_statistics_struct uit een route_struct
-route_statistic_struct calculate_statistics_data(route_struct& route_instance) {
+// Maakt een route_statistics_struct uit een RouteDataframe
+route_statistic_struct calculate_statistics_data(RouteDataframe& route_instance) {
 route_statistic_struct statistics_instance{};
 
 statistics_instance.attempt = calc_statistics_struct(route_instance.attempt);
