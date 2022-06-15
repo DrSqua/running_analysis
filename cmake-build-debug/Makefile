@@ -243,6 +243,30 @@ UI/Routegraph.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/UI/Routegraph.cpp.s
 .PHONY : UI/Routegraph.cpp.s
 
+data_processing/DataSet.obj: data_processing/DataSet.cpp.obj
+.PHONY : data_processing/DataSet.obj
+
+# target to build an object file
+data_processing/DataSet.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/data_processing/DataSet.cpp.obj
+.PHONY : data_processing/DataSet.cpp.obj
+
+data_processing/DataSet.i: data_processing/DataSet.cpp.i
+.PHONY : data_processing/DataSet.i
+
+# target to preprocess a source file
+data_processing/DataSet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/data_processing/DataSet.cpp.i
+.PHONY : data_processing/DataSet.cpp.i
+
+data_processing/DataSet.s: data_processing/DataSet.cpp.s
+.PHONY : data_processing/DataSet.s
+
+# target to generate assembly for a file
+data_processing/DataSet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\csv_parser.dir\build.make CMakeFiles/csv_parser.dir/data_processing/DataSet.cpp.s
+.PHONY : data_processing/DataSet.cpp.s
+
 data_processing/data_processer.obj: data_processing/data_processer.cpp.obj
 .PHONY : data_processing/data_processer.obj
 
@@ -335,6 +359,9 @@ help:
 	@echo ... UI/Routegraph.obj
 	@echo ... UI/Routegraph.i
 	@echo ... UI/Routegraph.s
+	@echo ... data_processing/DataSet.obj
+	@echo ... data_processing/DataSet.i
+	@echo ... data_processing/DataSet.s
 	@echo ... data_processing/data_processer.obj
 	@echo ... data_processing/data_processer.i
 	@echo ... data_processing/data_processer.s

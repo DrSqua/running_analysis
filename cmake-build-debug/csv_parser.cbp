@@ -424,6 +424,9 @@
 		<Unit filename="C:/Users/Robbe/CLionProjects/running_analysis/cmake-build-debug/_deps/raylib-src/src/utils.h">
 			<Option target="raylib"/>
 		</Unit>
+		<Unit filename="C:/Users/Robbe/CLionProjects/running_analysis/data_processing/DataSet.cpp">
+			<Option target="csv_parser"/>
+		</Unit>
 		<Unit filename="C:/Users/Robbe/CLionProjects/running_analysis/data_processing/DataSet.h">
 			<Option target="csv_parser"/>
 		</Unit>
