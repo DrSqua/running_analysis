@@ -25,8 +25,11 @@ int main() {
     SetTargetFPS(60);
     auto font = LoadFont("resources/fonts/mecha.png");
 
-    DataSet dataSet = createDataset(route.attempt, route.average_tempo);
-    auto norm_dataSet = normalizeDataset(dataSet, GetScreenWidth(), GetScreenHeight());
+    DataSet dataSet1 = createDataset(route.attempt, route.average_tempo);
+    auto norm_dataSet1 = normalizeDataset(dataSet1, GetScreenWidth() - 24, GetScreenHeight() - 24);
+
+    DataSet dataSet2 = createDataset(route.attempt, route.distance);
+    auto norm_dataSet2 = normalizeDataset(dataSet2, GetScreenWidth() - 24, GetScreenHeight() - 24);
 
     while (!WindowShouldClose()) {
         // Handle Input
@@ -37,9 +40,8 @@ int main() {
         BeginDrawing();
         ClearBackground(DARKGRAY);
 
-        // drawBackground();
-        //drawDataset(norm_dataSet);
-        drawDataset(norm_dataSet, dataSet, font);
+        drawDataset(norm_dataSet2, dataSet2, font, STRAVA_ORANGE);
+        drawDataset(norm_dataSet1, dataSet1, font, MAROON);
 
         DrawFPS(4, 4);
         EndDrawing();

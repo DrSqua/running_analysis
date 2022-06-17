@@ -23,7 +23,7 @@ void drawDataset(const DataSet& dataSet) {
     }
 }
 
-void drawDataset(const DataSet &pointDataSet, const DataSet &dataDataSet, const Font& font) {
+void drawDataset(const DataSet &pointDataSet, const DataSet &dataDataSet, const Font& font, Color color) {
     if (!pointDataSet.same_size(dataDataSet)) return;
     auto screenheight = (float)GetScreenHeight();
 
@@ -31,10 +31,14 @@ void drawDataset(const DataSet &pointDataSet, const DataSet &dataDataSet, const 
         Vector2 dotV2 = {pointDataSet.x_points.at(index) + border_float, screenheight - pointDataSet.y_points.at(index) - border_float};
         Vector2 textV2 = {dotV2.x-6, dotV2.y-16};
 
-        DrawCircleV(dotV2, 6, STRAVA_ORANGE);
+        DrawCircleV(dotV2, 6, color);
         DrawCircleV(dotV2, 3, LIGHTGRAY);
 
-        DrawText(TextFormat("%01.1f, %01.02f", dataDataSet.x_points.at(index), dataDataSet.y_points.at(index)), textV2.x, textV2.y, 6, STRAVA_ORANGE);
+        DrawText(TextFormat("%01.1f, %01.02f", dataDataSet.x_points.at(index), dataDataSet.y_points.at(index)), textV2.x, textV2.y, 6, color);
     }
+}
 
+
+void drawRouteGraph(const SurfaceDimension &surfaceDimension, const DataSet& dataSet...) {
+    drawDataset(dataSet);
 }
